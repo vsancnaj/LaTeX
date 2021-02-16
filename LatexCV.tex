@@ -1,0 +1,74 @@
+\documentclass[12pt]{article}
+
+\usepackage{titlesec,fontawesome, titling, wrapfig, graphicx}
+\usepackage[margin=1in]{geometry}
+
+
+
+
+\titleformat{\section}
+{\Large\scshape}%formatting
+{}%numbering
+{0em}%distance between number and what comes after it
+{}[\titlerule]%what should be written in front of the title
+
+
+\titleformat{\subsection}
+{}
+{\faAngleDoubleRight \ }
+{0em}
+{}
+
+\titleformat{\subsubsection}
+{}
+{}
+{3em}
+{}
+
+
+\renewcommand{\maketitle}{
+\begin{flushleft}
+{\Huge\bfseries
+\theauthor}
+
+\vspace{0.27em}
+
+\faPaperPlane\ some.email@gmail.com\\
+\faMobilePhone \ +44 444 444 \faLinkedin \ www.linkedin.com\\
+\faMapMarker \ Place Address here, Mailbox XXX, State, Country Zip Code\\
+\faCalendar \ DOB: December XXth, 2XXX \ \faFemale \ Nationality: Somewhere\\
+
+\end{flushleft}
+}
+
+\begin{document}
+
+\title{CV}
+\author{Camila Santana}
+\maketitle
+\section{\faGraduationCap \ Education}
+	\subsection{\textbf{Some Senior High School}}
+		\subsubsection{August 20XX - June 20XX High School Degree with a GPA of XX}
+	\subsection{\textbf{Some University}}
+		\subsubsection{August 20XX - Present Currently pursuing my XX year as a Some Degree student.}
+\section{\faBriefcase \ Work Experience}
+	\subsection{\textbf{University of Somwhere}}
+		\subsubsection{Intern for Someone, the Director of Engagement in the Center for Somewhere. \\
+		Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.}
+	\subsection{\textbf{Some Institute}}
+		\subsubsection{Intern for Someone, the Director of Operations at the Some Institute. \\
+		Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.}
+\section{\faCode \ PC Skills}
+	\subsection{\textbf{Excel}\ \ \textit{Proficient} \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \faAngleDoubleRight \ \textbf{\LaTeX}\ \ \textit{Proficient}}
+	\subsection{\textbf{Python}\ \ \textit{Proficient} \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \faAngleDoubleRight \ \textbf{Microsoft Word}\ \ \textit{Proficient}}
+	\subsection{\textbf{C/C++}\ \ \textit{Proficient}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \faAngleDoubleRight \ \textbf{Powerpoint}\ \ \textit{Proficient}}
+\section{\faLanguage \ Languages}
+	\subsection{\textbf{Spanish} \ \ \textit{Fluent/Native Speaker} \ \ \ \ \ \faAngleDoubleRight \ \textbf{German} \ \textit{B1.2}}
+	\subsection{\textbf{English} \ \ \textit{Fluent/Native Speaker}}
+	%\subsection{\textbf{German} \ \textit{Proficient}}
+
+
+	%\subsection{}
+			%\subsubsection{}
+
+\end{document}
