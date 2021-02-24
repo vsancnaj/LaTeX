@@ -1,0 +1,287 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amssymb,amsmath,amsfonts}
+\usepackage[none]{hyphenat}
+\usepackage{fancyhdr}
+\usepackage{mdwlist}
+
+
+\pagestyle{fancy}
+
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{\slshape \MakeUppercase{Assignment 3}}
+\fancyhead[R]{\slshape Valentina Sanchez}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}%remove horizontal line
+
+\begin{document}
+
+\begin{titlepage}
+	\begin{center}
+
+	\vspace*{1cm}
+		\Large{\textbf{Algorithms and Data Structures}}\\
+		%\Large{\textbf{February 22nd, 2021}}\\
+		\vfill
+		\line(1,0){400}\\ [3mm]
+		\Huge{\textbf{Assignment 3}}\\ [3mm]
+		\Large{\textbf{- \today -}}\\ [1mm]
+		\line(1,0){400}\\
+		\vfill
+		Camila Santana \\
+		
+	\end{center}
+\end{titlepage}
+
+\section{Problem 3.1}
+	\subsection{$f(n)=9n \ , \ g(n) = 5n^3$}
+		\begin{enumerate}
+			\item $f \in O(g)$ \\
+				In order for $f \in O(g)$, $\lim_{x \to \infty} \frac{f(n)}{g(n)} < \infty$	must hold. \\
+				$\lim_{x \to \infty} \frac{9n}{5n^3} = 0 < \infty$ \\
+				$\therefore f \in O(g)$
+				
+			\item $f \in \Omega(g)$\\
+				In order for $f \in \Omega(g)$, $\lim_{x \to \infty} \frac{f(n)}{g(n)} > 0$	must hold. \\
+				$\lim_{x \to \infty} \frac{9n}{5n^3} = 0 $ , it is not $>$ 0 \\
+				$\therefore f \notin \Omega(g)$
+				
+			\item $f \in \Theta(g)$ \\
+				In order for $f \in \Theta(g)$, $0 < \lim_{x \to \infty} \frac{f(n)}{g(n)} < \infty$	must hold. \\
+				$\Theta(g) = O(g) \cap \Omega(g)$ \\
+				It was proven that $f \notin \Omega(g)$ \\
+				$\therefore f \notin \Theta(g)$
+			
+			\item $f \in o(g)$ \\
+				In order for $f \in o(g)$, $\lim_{x \to \infty} \frac{f(n)}{g(n)} = 0$	must hold. \\
+				$\lim_{x \to \infty} \frac{9n}{5n^3} = 0 $\\
+				$\therefore f \in o(g)$
+			
+			\item $f \in \omega(g)$ \\
+				In order for $f \in \omega(g)$, $\lim_{x \to \infty} \frac{f(n)}{g(n)} = \infty$	must hold. \\
+				$\lim_{x \to \infty} \frac{9n}{5n^3} = 0 \neq \infty$ \\
+				$\therefore f \notin \omega(g)$
+			
+			
+			\item $g \in O(f)$ \\
+				As claimed previously $ f \notin \Omega(g)$ \\ 
+				According to the transpose symmetric property $f(n) = O(g(n)) \Leftrightarrow g(n) = \Omega (f(n)) $ \\
+				$\therefore g \notin O(f)$
+				
+			\item $g \in \Omega(f)$ \\
+				As claimed previously $ f \in O(g)$ \\ 
+				According to the transpose symmetric property $f(n) = \Omega (g(n)) \Leftrightarrow g(n) = O(f(n)) $ \\
+				$\therefore g \in \Omega (f)$
+			
+			\item $g \in \Theta(f)$ \\
+				It was previously proven that $g \notin O(f)$ \\
+				$\Theta(f) = O(f) \cap \Omega(g)$\\
+				$\therefore g \notin \Theta (g)$
+				
+			\item $g \in o(f)$ \\
+				In order for $f \in o(f)$, $\lim_{x \to \infty} \frac{g(n)}{f(n)} = 0$	must hold. \\
+				$\lim_{x \to \infty} \frac{5n^3}{9n} = \infty $\\
+				$\therefore g \notin o(f)$
+				
+			\item $g \in \omega(f)$ \\
+				In order for $f \in o(f)$, $\lim_{x \to \infty} \frac{g(n)}{f(n)} = \infty$	must hold. \\
+				$\lim_{x \to \infty} \frac{5n^3}{9n} = \infty $\\
+				$\therefore g \in \omega(f)$
+		\end{enumerate}
+		
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		
+	\subsection{$f(n)=9n^{0.8} + 2n^{0.3} + 14log(n) \ , \ g(n) = n^{0.5}$} 
+		\begin{enumerate}
+			\item $f \in O(g)$ \\
+				In order for $f \in O(g)$, $\lim_{x \to \infty} \frac{f(n)}{g(n)} < \infty$	must hold. \\
+				$\lim_{x \to \infty} \frac{9n^{0.8} + 2n^{0.3} + 14log(n)}{n^{0.5}} = \infty$ \\
+				$\therefore f \notin O(g)$
+				
+			\item $f \in \Omega(g)$\\
+				In order for $f \in \Omega(g)$, $\lim_{x \to \infty} \frac{f(n)}{g(n)} > 0$	must hold. \\
+				$\lim_{x \to \infty} \frac{9n^{0.8} + 2n^{0.3} + 14log(n)}{n^{0.5}} = \infty > 0$ \\
+				$\therefore f \in \Omega(g)$
+				
+			\item $f \in \Theta(g)$ \\
+				In order for $f \in \Theta(g)$, $0 < \lim_{x \to \infty} \frac{f(n)}{g(n)} < \infty$	must hold. \\
+				$\Theta(g) = O(g) \cap \Omega(g)$ \\
+				It was proven that $f \notin O(g)$\\
+				$\therefore f \notin \Theta(g)$
+			
+			\item $f \in o(g)$ \\
+				In order for $f \in o(g)$, $\lim_{x \to \infty} \frac{f(n)}{g(n)} = 0$	must hold. \\
+				$\lim_{x \to \infty} \frac{9n^{0.8} + 2n^{0.3} + 14log(n)}{n^{0.5}} = \infty $\\
+				$\therefore f \notin o(g)$
+			
+			\item $f \in \omega(g)$ \\
+				In order for $f \in \omega(g)$, $\lim_{x \to \infty} \frac{f(n)}{g(n)} = \infty$	must hold. \\
+				$\lim_{x \to \infty} \frac{f9n^{0.8} + 2n^{0.3} + 14log(n)}{n^{0.5}} = \infty$ \\
+				$\therefore f \in \omega(g)$
+			
+			
+			\item $g \in O(f)$ \\
+				As claimed previously $ f \in \Omega(g)$ \\ 
+				According to the transpose symmetric property $f(n) = O(g(n)) \Leftrightarrow g(n) = \Omega (f(n)) $ \\
+				$\therefore g \in O(f)$
+				
+			\item $g \in \Omega(f)$ \\
+				As claimed previously $ f \notin O(g)$ \\ 
+				According to the transpose symmetric property $f(n) = \Omega (g(n)) \Leftrightarrow g(n) = O(f(n)) $ \\
+				$\therefore g \notin \Omega (f)$
+			
+			\item $g \in \Theta(f)$ \\
+				It was previously proven that $g \notin \Omega(f)$ \\
+				$\Theta(f) = O(f) \cap \Omega(g)$\\
+				$\therefore g \notin \Theta (g)$
+				
+			\item $g \in o(f)$ \\
+				In order for $f \in o(f)$, $\lim_{x \to \infty} \frac{g(n)}{f(n)} = 0$	must hold. \\
+				$\lim_{x \to \infty} \frac{n^{0.5}}{9n^{0.8} + 2n^{0.3} + 14log(n)} = 0 $\\
+				$\therefore g \in o(f)$
+				
+			\item $g \in \omega(f)$ \\
+				In order for $f \in o(f)$, $\lim_{x \to \infty} \frac{g(n)}{f(n)} = \infty$	must hold. \\
+				$\lim_{x \to \infty} \frac{n^{0.5}}{9n^{0.8} + 2n^{0.3} + 14log(n)} = 0 $\\
+				$\therefore g \notin \omega(f)$
+		\end{enumerate}
+		
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		
+	\subsection{$f(n)=\frac{n^2}{log(n)} \ , \ g(n) = nlog(n)$}
+		\begin{enumerate}
+			\item $f \in O(g)$ \\
+				In order for $f \in O(g)$, $\lim_{x \to \infty} \frac{f(n)}{g(n)} < \infty$	must hold. \\
+				We simplify our initial given functions to $\lim_{x \to \infty} \frac{n}{(log(n))^{2}} = \infty$ \\
+				$\therefore f \notin O(g)$
+				
+			\item $f \in \Omega(g)$\\
+				In order for $f \in \Omega(g)$, $\lim_{x \to \infty} \frac{f(n)}{g(n)} > 0$	must hold. \\
+				$\lim_{x \to \infty} \frac{n}{(log(n))^{2}} = \infty > 0$ \\
+				$\therefore f \in \Omega(g)$
+				
+			\item $f \in \Theta(g)$ \\
+				In order for $f \in \Theta(g)$, $0 < \lim_{x \to \infty} \frac{f(n)}{g(n)} < \infty$	must hold. \\
+				$\Theta(g) = O(g) \cap \Omega(g)$ \\
+				It was proven that $f \notin O(g)$\\
+				$\therefore f \notin \Theta(g)$
+			
+			\item $f \in o(g)$ \\
+				In order for $f \in o(g)$, $\lim_{x \to \infty} \frac{f(n)}{g(n)} = 0$	must hold. \\
+				$\lim_{x \to \infty} \frac{n}{(log(n))^{2}} = \infty $\\
+				$\therefore f \notin o(g)$
+			
+			\item $f \in \omega(g)$ \\
+				In order for $f \in \omega(g)$, $\lim_{x \to \infty} \frac{f(n)}{g(n)} = \infty$	must hold. \\
+				$\lim_{x \to \infty} \frac{n}{(log(n))^{2}} = \infty$ \\
+				$\therefore f \in \omega(g)$
+			
+			
+			\item $g \in O(f)$ \\
+				As claimed previously $ f \in \Omega(g)$ \\ 
+				According to the transpose symmetric property $f(n) = O(g(n)) \Leftrightarrow g(n) = \Omega (f(n)) $ \\
+				$\therefore g \in O(f)$
+				
+			\item $g \in \Omega(f)$ \\
+				As claimed previously $ f \notin O(g)$ \\ 
+				According to the transpose symmetric property $f(n) = \Omega (g(n)) \Leftrightarrow g(n) = O(f(n)) $ \\
+				$\therefore g \notin \Omega (f)$
+			
+			\item $g \in \Theta(f)$ \\
+				It was previously proven that $g \notin \Omega(f)$ \\
+				$\Theta(f) = O(f) \cap \Omega(g)$\\
+				$\therefore g \notin \Theta (g)$
+				
+			\item $g \in o(f)$ \\
+				In order for $f \in o(f)$, $\lim_{x \to \infty} \frac{g(n)}{f(n)} = 0$	must hold. \\
+				$\lim_{x \to \infty} \frac{(log(n))^{2}}{n} = 0 $\\
+				$\therefore g \in o(f)$
+				
+			\item $g \in \omega(f)$ \\
+				In order for $f \in o(f)$, $\lim_{x \to \infty} \frac{g(n)}{f(n)} = \infty$	must hold. \\
+				$\lim_{x \to \infty} \frac{(log(n))^{2}}{n} = 0 $\\
+				$\therefore g \notin \omega(f)$
+		\end{enumerate}
+		
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\subsection{$f(n)=(log(3n))^3 \ , \ g(n) = 9log(n)$}
+		\begin{enumerate}
+			\item $f \in O(g)$ \\
+				In order for $f \in O(g)$, $\lim_{x \to \infty} \frac{f(n)}{g(n)} < \infty$	must hold. \\
+				We simplify our initial given functions to $\lim_{x \to \infty} \frac{(log(3n))^3}{9log(n)} = \infty$ \\
+				$\therefore f \notin O(g)$
+				
+			\item $f \in \Omega(g)$\\
+				In order for $f \in \Omega(g)$, $\lim_{x \to \infty} \frac{f(n)}{g(n)} > 0$	must hold. \\
+				$\lim_{x \to \infty} \frac{(log(3n))^3}{9log(n)} = \infty > 0$ \\
+				$\therefore f \in \Omega(g)$
+				
+			\item $f \in \Theta(g)$ \\
+				In order for $f \in \Theta(g)$, $0 < \lim_{x \to \infty} \frac{f(n)}{g(n)} < \infty$	must hold. \\
+				$\Theta(g) = O(g) \cap \Omega(g)$ \\
+				It was proven that $f \notin O(g)$\\
+				$\therefore f \notin \Theta(g)$
+			
+			\item $f \in o(g)$ \\
+				In order for $f \in o(g)$, $\lim_{x \to \infty} \frac{f(n)}{g(n)} = 0$	must hold. \\
+				$\lim_{x \to \infty} \frac{(log(3n))^3}{9log(n)} = \infty $\\
+				$\therefore f \notin o(g)$
+			
+			\item $f \in \omega(g)$ \\
+				In order for $f \in \omega(g)$, $\lim_{x \to \infty} \frac{f(n)}{g(n)} = \infty$	must hold. \\
+				$\lim_{x \to \infty} \frac{(log(3n))^3}{9log(n)} = \infty$ \\
+				$\therefore f \in \omega(g)$
+			
+			
+			\item $g \in O(f)$ \\
+				As claimed previously $ f \in \Omega(g)$ \\ 
+				According to the transpose symmetric property $f(n) = O(g(n)) \Leftrightarrow g(n) = \Omega (f(n)) $ \\
+				$\therefore g \in O(f)$
+				
+			\item $g \in \Omega(f)$ \\
+				As claimed previously $ f \notin O(g)$ \\ 
+				According to the transpose symmetric property $f(n) = \Omega (g(n)) \Leftrightarrow g(n) = O(f(n)) $ \\
+				$\therefore g \notin \Omega (f)$
+			
+			\item $g \in \Theta(f)$ \\
+				It was previously proven that $g \notin \Omega(f)$ \\
+				$\Theta(f) = O(f) \cap \Omega(g)$\\
+				$\therefore g \notin \Theta (g)$
+				
+			\item $g \in o(f)$ \\
+				In order for $f \in o(f)$, $\lim_{x \to \infty} \frac{g(n)}{f(n)} = 0$	must hold. \\
+				$\lim_{x \to \infty} \frac{9log(n)}{(log(3n))^3} = 0 $\\
+				$\therefore g \in o(f)$
+				
+			\item $g \in \omega(f)$ \\
+				In order for $f \in o(f)$, $\lim_{x \to \infty} \frac{g(n)}{f(n)} = \infty$	must hold. \\
+				$\lim_{x \to \infty} \frac{9log(n)}{(log(3n))^3} = 0 $\\
+				$\therefore g \notin \omega(f)$
+		\end{enumerate}
+
+
+	
+		
+	
+	
+
+	
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
